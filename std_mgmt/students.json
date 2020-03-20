@@ -1,0 +1,24 @@
+[
+  {
+    "model": "student.university",
+    "pk": 1,
+    "fields": {
+      "name": "K.T.U"
+    }
+  },
+  {
+    "model": "student.university",
+    "pk": 2,
+    "fields": {
+      "name": "M.G"
+    }
+  },
+  {
+    "model": "student.student",
+    "pk": 1,
+    "fields": {
+      "name": "David",
+      "university": [1]
+    }
+  }
+]
