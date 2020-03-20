@@ -65,14 +65,14 @@ class CreateUniversity(graphene.Mutation):
         input = UniversityInput(required=True)
 
     ok = graphene.Boolean()
-    university = graphene.Field(UniversityType)
+    universities = graphene.Field(UniversityType)
 
     @staticmethod
     def mutate(root, info, input=None):
         ok = True
         university_instance = University(name=input.name)
         university_instance.save()
-        return CreateUniversity(ok=ok, university=university_instance)
+        return CreateUniversity(ok=ok, universities=university_instance)
 
 class UpdateUniversity(graphene.Mutation):
     class Arguments:
@@ -90,8 +90,8 @@ class UpdateUniversity(graphene.Mutation):
             ok = True
             university_instance.name = input.name
             university_instance.save()
-            return UpdateUniversity(ok=ok, university=university_instance)
-        return UpdateUniversity(ok=ok, university=None)
+            return UpdateUniversity(ok=ok, universities=university_instance)
+        return UpdateUniversity(ok=ok, universities=None)
         
         
         
